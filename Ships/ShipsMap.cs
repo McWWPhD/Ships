@@ -90,7 +90,7 @@ namespace Ships
 
         }
 
-        //sprawdza na mapie czy miesce na statek jest dozwolone
+        //sprawdza na mapie czy miejsce na statek jest dozwolone
         public bool CheckTheMap (byte row, byte column, byte size, byte vOrH )
         {
             //false - wolne; true - zajęte
