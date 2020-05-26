@@ -31,17 +31,22 @@ namespace Ships
 
             ship.FillTheMaps();
 
-            foreach (var item in controls)
-            {
-                Button btn = (Button)item;
+            
+                foreach (var item in controls)
+                {
+                    Button btn = (Button)item;
 
-                btn.Tag = string.Format("Button{0}", index);
-                btn.Text = index.ToString();
-                btn.Click += Btn_Click;
-                index++;
+                    btn.Tag = string.Format("Button{0}", index);
+                    btn.Text = index.ToString();
+                    btn.Click += Btn_Click;
+                    index++;
 
-            }
+                }
 
+            Button fireButton = FindShipButtonByTag(101);
+            fireButton.Tag = string.Format("Fire");
+            fireButton.Text = string.Format("Fire!!!");
+            fireButton.Click -= Btn_Click;
 
             //ustawienie 4-masztowca
 
@@ -105,9 +110,6 @@ namespace Ships
             }
 
 
-
-
-
         }
 
         private Button FindShipButtonByTag (int number)
@@ -130,10 +132,27 @@ namespace Ships
         private void Btn_ClickHit(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            //MessageBox.Show(btn.Tag.ToString());
+            MessageBox.Show(btn.Tag.ToString());
             btn.Enabled = false;
             btn.BackColor = Color.Red;
         }
 
+        private void btnFire_Click(object sender, EventArgs e)
+        {
+            byte chosenNumber = (byte)numTarget.Value;
+
+            string pattern = string.Format("{0}", chosenNumber);
+            Button btn = Controls.OfType<Button>().FirstOrDefault(control => Equals(control.Text, pattern));
+            if (btn.Enabled == false)
+            {
+                MessageBox.Show("Ale to już było...");
+            }
+            else if (btn.Enabled == true )
+            {
+                btn.PerformClick();
+            }
+           
+
+        }
     }
 }

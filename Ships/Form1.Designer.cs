@@ -128,6 +128,10 @@
             this.button83 = new System.Windows.Forms.Button();
             this.button82 = new System.Windows.Forms.Button();
             this.button81 = new System.Windows.Forms.Button();
+            this.numTarget = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFire = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.numTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -1030,11 +1034,54 @@
             this.button81.Text = "X";
             this.button81.UseVisualStyleBackColor = true;
             // 
+            // numTarget
+            // 
+            this.numTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numTarget.Location = new System.Drawing.Point(811, 538);
+            this.numTarget.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numTarget.Name = "numTarget";
+            this.numTarget.Size = new System.Drawing.Size(120, 31);
+            this.numTarget.TabIndex = 100;
+            this.numTarget.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(808, 489);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 29);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "Target:";
+            // 
+            // btnFire
+            // 
+            this.btnFire.Font = new System.Drawing.Font("Swis721 Hv BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFire.ForeColor = System.Drawing.Color.Red;
+            this.btnFire.Location = new System.Drawing.Point(811, 636);
+            this.btnFire.Name = "btnFire";
+            this.btnFire.Size = new System.Drawing.Size(149, 73);
+            this.btnFire.TabIndex = 102;
+            this.btnFire.Text = "Fire!!!";
+            this.btnFire.UseVisualStyleBackColor = true;
+            this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 767);
+            this.ClientSize = new System.Drawing.Size(1010, 767);
+            this.Controls.Add(this.btnFire);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.numTarget);
             this.Controls.Add(this.button81);
             this.Controls.Add(this.button82);
             this.Controls.Add(this.button83);
@@ -1138,7 +1185,9 @@
             this.Name = "frmMain";
             this.Text = "Statki";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numTarget)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1244,6 +1293,9 @@
         private System.Windows.Forms.Button button83;
         private System.Windows.Forms.Button button82;
         private System.Windows.Forms.Button button81;
+        private System.Windows.Forms.NumericUpDown numTarget;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFire;
     }
 }
 
