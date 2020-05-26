@@ -17,9 +17,9 @@ namespace Ships
         {
             InitializeComponent();
         }
-        ShipLocation ship = new ShipLocation();
-
-        List<byte> map = new List<byte>();
+        
+        ShipsMap ship = new ShipsMap();
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace Ships
             List<Control> controls = this.Controls.OfType<Button>().Cast<Control>().ToList();
             controls.Reverse();
 
-            //Button[,] grid = new Button[10, 10];
+            ship.FillTheMaps();
 
             foreach (var item in controls)
             {
@@ -40,70 +40,48 @@ namespace Ships
                 btn.Click += Btn_Click;
                 index++;
 
-                ////wypełnienie tablicy przyciskami
-                //grid[X,Y] = btn;
-                //Y++;
-
-                //if (Y == 10)
-                //{
-                //    X++;
-                //    Y = 0;
-                //}
             }
 
+
             //ustawienie 4-masztowca
+
             byte[] fourMastShip = ship.GenerateShip(4);
-            map.AddRange(fourMastShip);
 
             foreach (byte part in fourMastShip)
             {
-               Button location = FindShipButtonByTag(part);
-               location.Tag = string.Format("Trafiony Czteromasztowiec");
-               location.Click -= Btn_Click;
-               location.Click += Btn_ClickHit;
+                Button location = FindShipButtonByTag(part);
+                location.Tag = string.Format("Trafiony Czteromasztowiec");
+                location.Click -= Btn_Click;
+                location.Click += Btn_ClickHit;
             }
 
             //ustawienie 3-masztowców
 
             for (int i = 0; i < 2; i++)
             {
-                byte[] threeMastShip = ship.GenerateShip(3);
+                byte[] threeMastship = ship.GenerateShip(3);
 
-                while (ship.Check(map, threeMastShip))
-                {
-                    ship.Move(threeMastShip);
-                }
-
-                map.AddRange(threeMastShip);
-
-
-                foreach (byte part in threeMastShip)
+                
+                foreach (byte part in threeMastship)
                 {
                     Button location = FindShipButtonByTag(part);
-                    location.Tag = string.Format("Trafiony Trzymasztowiec");
+                    location.Tag = string.Format("Trafiony trzymasztowiec");
                     location.Click -= Btn_Click;
                     location.Click += Btn_ClickHit;
                 }
             }
 
-            ////ustawienie 2-masztowców
+            //ustawienie 2-masztowców
 
             for (int i = 0; i < 3; i++)
             {
-                byte[] twoMastShip = ship.GenerateShip(2);
-
-                while (ship.Check(map, twoMastShip))
-                {
-                    ship.Move(twoMastShip);
-                }
-
-                map.AddRange(twoMastShip);
+                byte[] twoMastship = ship.GenerateShip(2);
 
 
-                foreach (byte part in twoMastShip)
+                foreach (byte part in twoMastship)
                 {
                     Button location = FindShipButtonByTag(part);
-                    location.Tag = string.Format("Trafiony Dwumasztowiec");
+                    location.Tag = string.Format("Trafiony dwumasztowiec");
                     location.Click -= Btn_Click;
                     location.Click += Btn_ClickHit;
                 }
@@ -114,24 +92,18 @@ namespace Ships
 
             for (int i = 0; i < 4; i++)
             {
-                byte[] oneMastShip = ship.GenerateShip(1);
-
-                while (ship.Check(map, oneMastShip))
-                {
-                    ship.Move(oneMastShip);
-                }
-
-                map.AddRange(oneMastShip);
+                byte[] oneMastship = ship.GenerateShip(1);
 
 
-                foreach (byte part in oneMastShip)
+                foreach (byte part in oneMastship)
                 {
                     Button location = FindShipButtonByTag(part);
-                    location.Tag = string.Format("Trafiony Zatopiony");
+                    location.Tag = string.Format("Trafiony zatopiony");
                     location.Click -= Btn_Click;
                     location.Click += Btn_ClickHit;
                 }
             }
+
 
 
 
@@ -148,7 +120,7 @@ namespace Ships
 
 
         private void Btn_Click(object sender, EventArgs e)
-        {
+           {
             Button btn = (Button)sender;
             btn.Enabled = false;
             //MessageBox.Show("Pudło");

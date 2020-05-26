@@ -30,8 +30,9 @@ namespace Ships
 
                     for (int i = 0; i < size; i++)
                     {
+
                         shipLocation[i] = startingPoint;
-                        startingPoint += 10;
+                        startingPoint += 10; 
                     }
                 }
                 else if (VOrH == 2)
@@ -41,8 +42,10 @@ namespace Ships
 
                     byte startingPoint = Convert.ToByte(string.Format("{0}{1}", row, column));
 
+
                     for (int i = 0; i < size; i++)
                     {
+
                         shipLocation[i] = startingPoint;
                         startingPoint += 1;
                     }
