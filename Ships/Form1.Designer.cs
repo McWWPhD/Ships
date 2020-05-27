@@ -131,7 +131,6 @@
             this.numTarget = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFire = new System.Windows.Forms.Button();
-            this.btnLucky = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numTarget)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1075,23 +1074,11 @@
             this.btnFire.UseVisualStyleBackColor = true;
             this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
             // 
-            // btnLucky
-            // 
-            this.btnLucky.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLucky.Location = new System.Drawing.Point(811, 390);
-            this.btnLucky.Name = "btnLucky";
-            this.btnLucky.Size = new System.Drawing.Size(172, 43);
-            this.btnLucky.TabIndex = 103;
-            this.btnLucky.Text = "button101";
-            this.btnLucky.UseVisualStyleBackColor = true;
-            this.btnLucky.Click += new System.EventHandler(this.btnLucky_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 767);
-            this.Controls.Add(this.btnLucky);
             this.Controls.Add(this.btnFire);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numTarget);
@@ -1311,7 +1298,6 @@
         private System.Windows.Forms.NumericUpDown numTarget;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFire;
-        private System.Windows.Forms.Button btnLucky;
     }
 }
 

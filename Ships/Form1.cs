@@ -48,11 +48,6 @@ namespace Ships
             fireButton.Text = string.Format("Fire!!!");
             fireButton.Click -= Btn_Click;
 
-            Button bomb = FindShipButtonByTag(102);
-            bomb.Tag = string.Format("Lucky");
-            bomb.Text = string.Format("I feel Lucky !!!");
-            bomb.Click -= Btn_Click;
-
             //ustawienie 4-masztowca
 
             byte[] fourMastShip = ship.GenerateShip(4);
@@ -158,29 +153,6 @@ namespace Ships
             }
            
 
-        }
-
-        private void btnLucky_Click(object sender, EventArgs e)
-        {
-            Random random = new Random((int)DateTime.Now.Ticks);
-
-            Button btn;
-
-            do
-            {
-                int randomButton = random.Next(1, 101);
-
-                string pattern = string.Format("{0}", randomButton);
-                btn = Controls.OfType<Button>().FirstOrDefault(control => Equals(control.Text, pattern));
-
-
-            } while (btn.Enabled == false);
-
-
-                btn.PerformClick();
-                //btnLucky.Enabled = false;
-
-        
         }
     }
 }
