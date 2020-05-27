@@ -19,7 +19,7 @@ namespace Ships
         }
         
         ShipsMap ship = new ShipsMap();
-        
+         
 
         private void Form1_Load(object sender, EventArgs e)
         {
