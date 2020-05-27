@@ -30,7 +30,7 @@ namespace Ships
             controls.Reverse();
 
             ship.FillTheMaps();
-
+             
             
                 foreach (var item in controls)
                 {
