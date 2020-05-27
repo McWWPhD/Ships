@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Ships
 {
-    public partial class frmMain : Form
+    public partial class btnLucky : Form
     {
-        public frmMain()
+        public btnLucky()
         {
             InitializeComponent();
         }

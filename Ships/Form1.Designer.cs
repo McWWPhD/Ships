@@ -1,6 +1,6 @@
 ﻿namespace Ships
 {
-    partial class frmMain
+    partial class btnLucky
     {
         /// <summary>
         /// Required designer variable.
@@ -1037,7 +1037,7 @@
             // numTarget
             // 
             this.numTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numTarget.Location = new System.Drawing.Point(811, 538);
+            this.numTarget.Location = new System.Drawing.Point(811, 541);
             this.numTarget.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1056,7 +1056,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(808, 489);
+            this.label1.Location = new System.Drawing.Point(808, 492);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 29);
             this.label1.TabIndex = 101;
@@ -1066,7 +1066,7 @@
             // 
             this.btnFire.Font = new System.Drawing.Font("Swis721 Hv BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFire.ForeColor = System.Drawing.Color.Red;
-            this.btnFire.Location = new System.Drawing.Point(811, 636);
+            this.btnFire.Location = new System.Drawing.Point(811, 639);
             this.btnFire.Name = "btnFire";
             this.btnFire.Size = new System.Drawing.Size(149, 73);
             this.btnFire.TabIndex = 102;
@@ -1074,7 +1074,7 @@
             this.btnFire.UseVisualStyleBackColor = true;
             this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
             // 
-            // frmMain
+            // btnLucky
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1182,7 +1182,9 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "frmMain";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "btnLucky";
             this.Text = "Statki";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numTarget)).EndInit();
