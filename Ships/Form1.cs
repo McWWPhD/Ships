@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ships
-{
+{ 
     public partial class frmMain : Form
     {
         public frmMain()
