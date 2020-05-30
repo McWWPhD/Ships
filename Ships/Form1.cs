@@ -19,7 +19,8 @@ namespace Ships
         }
         
         ShipsMap ship = new ShipsMap();
-         
+        byte hitCount =0;
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -45,13 +46,14 @@ namespace Ships
 
             Button fireButton = FindShipButtonByTag(101);
             fireButton.Tag = string.Format("Fire");
-            fireButton.Text = string.Format("Fire!!!");
+            fireButton.Text = string.Format("Fire !!!");
             fireButton.Click -= Btn_Click;
 
             Button bomb = FindShipButtonByTag(102);
             bomb.Tag = string.Format("Lucky");
             bomb.Text = string.Format("I feel Lucky !!!");
             bomb.Click -= Btn_Click;
+
 
             //ustawienie 4-masztowca
 
@@ -140,7 +142,11 @@ namespace Ships
             MessageBox.Show(btn.Tag.ToString());
             btn.Enabled = false;
             btn.BackColor = Color.Red;
+            hitCount++;
+            lblHitCount.Text = string.Format("{0}", hitCount);
+
         }
+
 
         private void btnFire_Click(object sender, EventArgs e)
         {

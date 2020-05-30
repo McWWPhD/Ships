@@ -107,7 +107,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.button43 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
-            this.button41 = new System.Windows.Forms.Button();
+            this.lbHit = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
             this.button99 = new System.Windows.Forms.Button();
             this.button98 = new System.Windows.Forms.Button();
@@ -132,6 +132,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnFire = new System.Windows.Forms.Button();
             this.btnLucky = new System.Windows.Forms.Button();
+            this.lblHitCount = new System.Windows.Forms.Label();
+            this.lblHitText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numTarget)).BeginInit();
             this.SuspendLayout();
             // 
@@ -846,14 +848,14 @@
             this.button42.Text = "X";
             this.button42.UseVisualStyleBackColor = true;
             // 
-            // button41
+            // lbHit
             // 
-            this.button41.Location = new System.Drawing.Point(653, 517);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(60, 60);
-            this.button41.TabIndex = 79;
-            this.button41.Text = "X";
-            this.button41.UseVisualStyleBackColor = true;
+            this.lbHit.Location = new System.Drawing.Point(653, 517);
+            this.lbHit.Name = "lbHit";
+            this.lbHit.Size = new System.Drawing.Size(60, 60);
+            this.lbHit.TabIndex = 79;
+            this.lbHit.Text = "X";
+            this.lbHit.UseVisualStyleBackColor = true;
             // 
             // button100
             // 
@@ -1037,15 +1039,15 @@
             // 
             // numTarget
             // 
-            this.numTarget.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numTarget.Location = new System.Drawing.Point(811, 538);
+            this.numTarget.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numTarget.Location = new System.Drawing.Point(884, 448);
             this.numTarget.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numTarget.Name = "numTarget";
-            this.numTarget.Size = new System.Drawing.Size(120, 31);
+            this.numTarget.Size = new System.Drawing.Size(81, 39);
             this.numTarget.TabIndex = 100;
             this.numTarget.Value = new decimal(new int[] {
             1,
@@ -1056,41 +1058,66 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(808, 489);
+            this.label1.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(759, 453);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 29);
+            this.label1.Size = new System.Drawing.Size(110, 29);
             this.label1.TabIndex = 101;
             this.label1.Text = "Target:";
             // 
             // btnFire
             // 
-            this.btnFire.Font = new System.Drawing.Font("Swis721 Hv BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFire.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFire.ForeColor = System.Drawing.Color.Red;
-            this.btnFire.Location = new System.Drawing.Point(811, 636);
+            this.btnFire.Location = new System.Drawing.Point(788, 608);
             this.btnFire.Name = "btnFire";
-            this.btnFire.Size = new System.Drawing.Size(149, 73);
+            this.btnFire.Size = new System.Drawing.Size(187, 102);
             this.btnFire.TabIndex = 102;
-            this.btnFire.Text = "Fire!!!";
+            this.btnFire.Text = "Fire !!!";
             this.btnFire.UseVisualStyleBackColor = true;
             this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
             // 
             // btnLucky
             // 
-            this.btnLucky.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLucky.Location = new System.Drawing.Point(811, 390);
+            this.btnLucky.BackColor = System.Drawing.Color.Transparent;
+            this.btnLucky.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLucky.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnLucky.Location = new System.Drawing.Point(788, 525);
             this.btnLucky.Name = "btnLucky";
-            this.btnLucky.Size = new System.Drawing.Size(172, 43);
+            this.btnLucky.Size = new System.Drawing.Size(187, 43);
             this.btnLucky.TabIndex = 103;
             this.btnLucky.Text = "button101";
-            this.btnLucky.UseVisualStyleBackColor = true;
+            this.btnLucky.UseVisualStyleBackColor = false;
             this.btnLucky.Click += new System.EventHandler(this.btnLucky_Click);
+            // 
+            // lblHitCount
+            // 
+            this.lblHitCount.Font = new System.Drawing.Font("Stencil", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHitCount.ForeColor = System.Drawing.Color.Red;
+            this.lblHitCount.Location = new System.Drawing.Point(779, 114);
+            this.lblHitCount.Name = "lblHitCount";
+            this.lblHitCount.Size = new System.Drawing.Size(186, 117);
+            this.lblHitCount.TabIndex = 104;
+            this.lblHitCount.Text = "0";
+            this.lblHitCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHitText
+            // 
+            this.lblHitText.AutoSize = true;
+            this.lblHitText.Font = new System.Drawing.Font("Stencil", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHitText.Location = new System.Drawing.Point(763, 61);
+            this.lblHitText.Name = "lblHitText";
+            this.lblHitText.Size = new System.Drawing.Size(219, 42);
+            this.lblHitText.TabIndex = 105;
+            this.lblHitText.Text = "Hit Count:";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 767);
+            this.Controls.Add(this.lblHitText);
+            this.Controls.Add(this.lblHitCount);
             this.Controls.Add(this.btnLucky);
             this.Controls.Add(this.btnFire);
             this.Controls.Add(this.label1);
@@ -1115,7 +1142,7 @@
             this.Controls.Add(this.button98);
             this.Controls.Add(this.button99);
             this.Controls.Add(this.button100);
-            this.Controls.Add(this.button41);
+            this.Controls.Add(this.lbHit);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button43);
             this.Controls.Add(this.button44);
@@ -1287,7 +1314,7 @@
         private System.Windows.Forms.Button button44;
         private System.Windows.Forms.Button button43;
         private System.Windows.Forms.Button button42;
-        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button lbHit;
         private System.Windows.Forms.Button button100;
         private System.Windows.Forms.Button button99;
         private System.Windows.Forms.Button button98;
@@ -1312,6 +1339,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFire;
         private System.Windows.Forms.Button btnLucky;
+        private System.Windows.Forms.Label lblHitCount;
+        private System.Windows.Forms.Label lblHitText;
     }
 }
 
